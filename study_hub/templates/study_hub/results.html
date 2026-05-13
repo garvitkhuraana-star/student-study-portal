@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"></head>
+<body class="bg-light text-center">
+    <div class="container mt-5">
+        <div class="card p-5 shadow">
+            <h1 class="display-4">Quiz Complete! 🎯</h1>
+            <p class="lead">You scored <strong>{{ score }}</strong> out of {{ total }}</p>
+            <a href="{% url 'dashboard' %}" class="btn btn-primary">Back to Dashboard</a>
+        </div>
+    </div>
+</body>
+</html>

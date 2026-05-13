@@ -1,0 +1,16 @@
+{% extends 'core/base.html' %}
+{% block content %}
+<h2>Select a Category</h2>
+<div class="row">
+    {% for cat in categories %}
+    <div class="col-md-4">
+        <div class="card p-3 shadow-sm">
+            <h4>{{ cat.name }}</h4>
+            {% for quiz in cat.quiz_set.all %}
+                <a href="{% url 'start_quiz' quiz.id %}" class="btn btn-primary btn-sm mb-2">{{ quiz.title }}</a>
+            {% endfor %}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

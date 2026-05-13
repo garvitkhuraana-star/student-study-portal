@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"></head>
+<body class="bg-light">
+    <div class="container mt-5">
+        <h1 class="mb-4 text-primary">🎓 Student Study Portal</h1>
+        <div class="row">
+            {% for sub in subjects %}
+            <div class="col-md-4">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h3>{{ sub.title }}</h3>
+                        {% for qz in sub.studyquiz_set.all %}
+                        <a href="{% url 'run_quiz' qz.id %}" class="btn btn-block btn-outline-dark">{{ qz.name }}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
