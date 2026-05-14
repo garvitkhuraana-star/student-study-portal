@@ -26,3 +26,7 @@ class StudentRecord(models.Model):
     points = models.IntegerField()
     total_points = models.IntegerField()
     date_taken = models.DateTimeField(auto_now_add=True)
+class Notes(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE) # Links note to a user
+    title = models.CharField(max_length=200)
+    description = models.TextField()
